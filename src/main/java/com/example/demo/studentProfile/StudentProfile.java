@@ -1,4 +1,4 @@
-package com.example.studentProfile;
+package com.example.demo.studentProfile;
 
 import com.example.demo.students.Student;
 import jakarta.persistence.*;
@@ -6,9 +6,9 @@ import jakarta.persistence.*;
 @Entity
 public class StudentProfile {
    @Id
-           @GeneratedValue(strategy = GenerationType.IDENTITY)
+   @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
-    String    email;
+    String email;
     int phoneNumber;
     String address;
     @OneToOne

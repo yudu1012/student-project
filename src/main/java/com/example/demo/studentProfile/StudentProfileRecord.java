@@ -1,4 +1,4 @@
-package com.example.studentProfile;
+package com.example.demo.studentProfile;
 
 public record StudentProfileRecord(
         String email,

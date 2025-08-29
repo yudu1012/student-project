@@ -1,7 +1,7 @@
 package com.example.demo.students;
 
 import com.example.demo.schools.School;
-import com.example.studentProfile.StudentProfile;
+import com.example.demo.studentProfile.StudentProfile;
 import jakarta.persistence.*;
 
 @Entity
@@ -14,11 +14,11 @@ public class Student {
     private  String middle_name;
     private String birth_date;
     private  String gender;
-    @OneToOne
-    private StudentProfile studentProfile;
     @ManyToOne()
     @JoinColumn(name = "school_id")
     private School school;
+    @OneToOne(cascade = CascadeType.ALL)
+    private StudentProfile studentProfile;
     public Student() {
     }
 
