@@ -17,7 +17,7 @@ public class Student {
     @ManyToOne()
     @JoinColumn(name = "school_id")
     private School school;
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne()
     private StudentProfile studentProfile;
     public Student() {
     }
