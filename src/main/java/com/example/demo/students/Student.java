@@ -1,9 +1,7 @@
 package com.example.demo.students;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.example.demo.schools.School;
+import jakarta.persistence.*;
 
 @Entity
 public class Student {
@@ -15,7 +13,9 @@ public class Student {
     private  String middle_name;
     private String birth_date;
     private  String gender;
-
+    @ManyToOne()
+    @JoinColumn(name = "school_id")
+    private School school;
     public Student() {
     }
 
@@ -73,6 +73,14 @@ public class Student {
 
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    public School getSchool() {
+        return school;
+    }
+
+    public void setSchool(School school) {
+        this.school = school;
     }
 
     @Override
