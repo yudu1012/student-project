@@ -1,5 +1,6 @@
 package com.example.demo.schools;
 
+import com.example.demo.schoolProfile.schoolProfile;
 import com.example.demo.students.Student;
 import jakarta.persistence.*;
 
@@ -19,6 +20,8 @@ public class School {
     private String description;
     @OneToMany
     private List<Student> students;
+    @OneToOne
+    private schoolProfile schoolProfile;
     public School() {
     }
 
@@ -102,6 +105,14 @@ public class School {
 
     public void setStudents(List<Student> students) {
         this.students = students;
+    }
+
+    public schoolProfile getSchoolProfile() {
+        return schoolProfile;
+    }
+
+    public void setSchoolProfile(schoolProfile schoolProfile) {
+        this.schoolProfile = schoolProfile;
     }
 
     @Override

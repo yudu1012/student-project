@@ -6,6 +6,7 @@ public record StudentRecord(
         String middle_name,
         String birth_date,
         String gender,
-        int school_id
+        int school_id,
+        int hospital_id
 ) {
 }

@@ -1,5 +1,6 @@
 package com.example.demo.students;
 
+import com.example.demo.hospitals.Hospital;
 import com.example.demo.schools.School;
 import com.example.demo.studentProfile.StudentProfile;
 import jakarta.persistence.*;
@@ -19,6 +20,9 @@ public class Student {
     private School school;
     @OneToOne()
     private StudentProfile studentProfile;
+    @ManyToOne
+    @JoinColumn(name = "hospital_id")
+    private Hospital hospital;
     public Student() {
     }
 
@@ -92,6 +96,14 @@ public class Student {
 
     public void setStudentProfile(StudentProfile studentProfile) {
         this.studentProfile = studentProfile;
+    }
+
+    public Hospital getHospital() {
+        return hospital;
+    }
+
+    public void setHospital(Hospital hospital) {
+        this.hospital = hospital;
     }
 
     @Override
